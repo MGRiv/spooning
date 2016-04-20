@@ -2,43 +2,7 @@ var canvas = document.getElementById("canvas");
 var stop = document.getElementById("s");
 var i;
 
-var pul = document.getElementById("c");
-
 var b = document.getElementById("b");
-
-var pulse = function pulse(e) {
-    if(canvas.childElementCount != 0){
-	canvas.removeChild(canvas.children[0]);
-	clearInterval(i);
-    }
-    var diff = -1;
-    var rad = 0;
-    var col = "#ff0000";
-    var cir = function (e) {
-	if(canvas.childElementCount != 0){
-	    canvas.removeChild(canvas.children[0]);
-	}
-	var c1 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	if(rad == 250 || rad == 0){
-	    diff = diff * -1;
-	    if(col == "#ff0000"){
-		col = "#00ff00";
-	    }else if(col == "#00ff00"){
-		col = "#0000ff";
-	    }else{
-		col = "#ff0000";
-	    }
-	}
-	rad = rad + diff;
-	c1.setAttribute("cx", 250);
-	c1.setAttribute("cy", 250);
-	c1.setAttribute("r", rad);
-	c1.setAttribute("fill", col);
-	c1.setAttribute("stroke", "black");
-	canvas.appendChild(c1);
-    }
-    i = setInterval(cir,25);
-}
 
 var bounce = function bounce(e) {
     if(canvas.childElementCount != 0){
@@ -81,5 +45,4 @@ var cease = function cease(e) {
 };
 
 b.addEventListener("click",bounce);
-pul.addEventListener("click",pulse);
 stop.addEventListener("click",cease);
