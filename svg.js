@@ -39,13 +39,13 @@ var makeBall = function makeBall(e){
 
 var bounce = function bounce(e) {
     var c;
-    for (c = 0; c < 10; c++) { 
+    for (c = 0; c < 10; c++) {
 	var q = makeBall();
-	
+
     }
     var move = function (e) {
 	for(ch in canvas.children){
-	    ch.makeBall();	    
+	    ch.makeBall();
 	}
     };
     i = setInterval(move,25);
@@ -57,4 +57,3 @@ var cease = function cease(e) {
 stop.addEventListener("click",cease);
 
 b.addEventListener("click",bounce);
-
